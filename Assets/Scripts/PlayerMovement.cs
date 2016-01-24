@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour {
 		moveTowardsMouse (v3);
 	}
 
+	void OnTriggerEnter2D(Collider2D other) {
+		
+		if (other.gameObject.CompareTag ("deadly"))
+			Debug.Log ("Touched deadly");
+	}
 
 	void fixedUpdate() {
 
