@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 	private Rigidbody2D playerRigidBody;
 	private GameController game;
 
-
 	void Start() {
 		game = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		playerRigidBody = GetComponent<Rigidbody2D> ();
@@ -27,12 +26,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		
-		if (other.gameObject.CompareTag ("deadly"))
-			Debug.Log ("Touched deadly");
+		if (other.gameObject.CompareTag ("deadly")) {
+		}
+			
 
 		if (other.gameObject.CompareTag ("coin")) {
-			Debug.Log ("triggered coin");
-			collectCoin (other.gameObject);
+			
+			game.collectCoin (other.gameObject);
 		}
 		
 	}
@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 		Quaternion desiredRotation = Quaternion.LookRotation (transform.position - mousePosition, Vector3.forward);
 		desiredRotation.x = 0.0f;
 		desiredRotation.y = 0.0f;
+
 		transform.rotation = desiredRotation;
 	}
 
@@ -65,14 +66,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		v3FromMouse.z = 20.0f;
 		playerRigidBody.AddForce (transform.up * speed);
-	}
-
-	private void collectCoin(GameObject coin) {
-
-		// destroy coin or remove from item pool?
-
-		// call GameController.score
-		game.scorePoints(1);
 	}
 
 }
