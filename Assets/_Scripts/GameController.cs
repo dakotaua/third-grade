@@ -113,6 +113,7 @@ public class GameController : MonoBehaviour {
 
 	private void progressLevel() {
 
+		Debug.Log ("Progress level");
 		clearGameObjects ();
 		curLevel++;
 		initLevel(curLevel);
@@ -128,10 +129,17 @@ public class GameController : MonoBehaviour {
 	}
 
 	private void resetPlayerPosition() {
-
+		Debug.Log ("Reset player position");
 		GameObject player = (GameObject) Instantiate (protoPlayer);
 		player.transform.parent = transform;
 	}
+		
+	public void endGame() {
 
+		Debug.Log ("Game manager - end game");	
 
+		// show endGameScoreLabel, endGameQuitButton, endGameRestartButton
+
+	}
+		
 }

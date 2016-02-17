@@ -3,11 +3,8 @@ using System.Collections;
 
 public class PlayerSpriteScript : MonoBehaviour {
 
-	private Quaternion desiredRotation = Quaternion.identity;
-
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -16,7 +13,6 @@ public class PlayerSpriteScript : MonoBehaviour {
 	}
 
 	void LateUpdate() {
-
-		transform.rotation = desiredRotation;
+		transform.Rotate(new Vector3(0, 0, -0.5f));
 	}
 }
