@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class MenuScript : MonoBehaviour {
+public class PauseMenuScript : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject pauseUI;
